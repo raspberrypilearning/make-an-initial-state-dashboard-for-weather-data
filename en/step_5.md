@@ -1,6 +1,6 @@
 ## Using live data
 
-For testing and development, you used some fictitious data values, stored as variables in your code. Once you've tested your upload, you should delete these and amend the code to process real data from your weather station.
+For testing and development, you used some fictitious data values that you stored as variables in your code. Once you've tested your upload, you should delete these and amend the code to process real data from your weather station.
 
 - As you're going to be building some dashboards, it will be easier to see a text-based representation of the wind direction. At the moment you send a numerical value for the angle detected by our wind vane. So in the next step you're going onvert that into [cardinal (N, S, E or W) or intercardinal directions (ESE, NW etc)](http://snowfence.umn.edu/Components/winddirectionanddegreeswithouttable3.htm){:target="_blank"}.
 
