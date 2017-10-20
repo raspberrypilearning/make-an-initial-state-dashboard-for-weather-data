@@ -78,9 +78,7 @@ humidity = 57.078
 
 ![](images/image11.png)
 
-- You can experiment with different view options by clicking on the **Edit Tile** button in the top right and then clicking on the graph tile.
-
-![](images/image23.png)
+- You can experiment with different view options by clicking on the **Edit Tile** button in the top right and then clicking on the graph tile. ![](images/image23.png)
 
 - Choose some of the other Tile Type options and look at the different ways of displaying your data.
 

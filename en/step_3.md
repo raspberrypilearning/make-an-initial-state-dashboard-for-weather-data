@@ -10,9 +10,7 @@ If you can't find these details, please email weather@raspberrypi.org with your 
 
 Once you're logged in, create a new **bucket** to store your data:
 
-- If it is not already open, click on the **show/hide the shelf** button in the top left hand corner of the window.
-
-![](images/image5.png)
+- If it is not already open, click on the **show/hide the shelf** button in the top left hand corner of the window. ![](images/image5.png)
 
 - Then click on the **Create stream bucket** button. ![](images/image29.png)
 
