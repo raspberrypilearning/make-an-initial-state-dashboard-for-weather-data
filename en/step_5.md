@@ -57,13 +57,13 @@ The rest of your code can be inserted after lines in the original `log_all_senso
 ---hint---
 A modified log_all_sensors.py could look like this:
 ```python
-#!/usr/bin/python
+#!/usr/bin/python3
 import time
 import sys
-from ISStreamer.Streamer import Streamer
-from gpiozero import MCP3008
 import interrupt_client, MCP342X, wind_direction, HTU21D, bmp085, tgs2600, ds18b20_therm
-import database # requires MySQLdb python 2 library which is not ported to python 3 yet
+import database
+import os
+from ISStreamer.Streamer import Streamer
 
 pressure = bmp085.BMP085()
 temp_probe = ds18b20_therm.DS18B20()
@@ -72,7 +72,7 @@ humidity = HTU21D.HTU21D()
 wind_dir = wind_direction.wind_direction(adc_channel = 0, config_file="wind_direction.json")
 interrupts = interrupt_client.interrupt_client(port = 49501)
 
-db = database.weather_database() #Local MySQL db
+db = database.weather_database() #Local MariaDB db
 
 wind_average = wind_dir.get_value(10) #ten seconds
 ambient_temp = humidity.read_temperature()
@@ -88,6 +88,8 @@ print("Inserting...")
 db.insert(ambient_temp, ground_temp, air_quality, pressure, humidity, wind_average, wind_speed, wind_gust, rainfall)
 print("done")
 
+interrupts.reset()
+
 def degrees_to_cardinal(angle):
 
     directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE",
@@ -96,15 +98,11 @@ def degrees_to_cardinal(angle):
     return directions[ix % 16]
 
 credentials_file = os.path.join(os.path.dirname(__file__), "credentials.initialstate")
+f_is = open(credentials_file, "r")
+credentials_is = json.load(f_is)
+f.close()
 
-if os.path.isfile(credentials_file):
-    f = open(credentials_file, "r")
-    credentials = json.load(f)
-    f.close()
-else:
-     print("Credentials file not found")
 
-interrupts.reset()
 # --------- Initial State Settings ---------
 
 BUCKET_NAME = ":partly_sunny:  Weather Station"
@@ -137,7 +135,7 @@ streamer.log(":wind_blowing_face: " + SENSOR_LOCATION_NAME + " Wind Gust", wind_
 streamer.log(":cloud_rain: " + SENSOR_LOCATION_NAME + " Rainfall", rainfall)
 
 streamer.flush()
-]
+print("Upload code finished")
 ```
 ---/hint---
 ---/hints---

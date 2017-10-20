@@ -154,6 +154,7 @@ Add the following lines to your code:
 credentials_file = os.path.join(os.path.dirname(__file__), "credentials.initialstate")
 f_is = open(credentials_file, "r")
 credentials_is = json.load(f_is)
+f.close()
 ```
 ---/hint---
 ---hint---
@@ -165,4 +166,4 @@ ACCESS_KEY = credentials_is['ACCESS_KEY']
 ---/hint---
 ---/hints---
 
-- Test that your code still uploads successfully. 
+- Test that your code still uploads successfully.
