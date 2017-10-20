@@ -47,7 +47,7 @@ Once your code is working, you need to integrate it with the Oracle Weather Stat
 
 - The Oracle Weather Station software uses the Crontab method to run a Python script called [log_all_sensors.py](https://github.com/raspberrypi/weather-station/blob/master/log_all_sensors.py) every 5 minutes. A simple way to modify your Weather Station so that it regularly uploads data to Initial State is to add the upload code you have written to this file.
 
---hints---
+---hints---
 ---hint---
 Make sure you add the library imports to the top of your modified file.
 ---/hint---
