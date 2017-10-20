@@ -8,13 +8,15 @@ If you can't find these details, please email weather@raspberrypi.org with your 
 
 ![](images/image4.png)
 
-- Once you're logged in, you can create a new **bucket** to store your data.
+Once you're logged in, create a new **bucket** to store your data:
 
-- Click on the **show/hide the shelf** button in the top left hand cornet of the window.
+- If it is not already open, click on the **show/hide the shelf** button in the top left hand corner of the window.
 
 ![](images/image5.png)
 
-- Then click on the **Create bucket stream** button.
+- Then click on the **Create stream bucket** button.
+
+![](images/image29.png)
 
 ![](images/image6.png)
 
@@ -24,7 +26,7 @@ If you can't find these details, please email weather@raspberrypi.org with your 
 
 - Check the **Configure Endpoint Keys** checkbox.
 
-- You'll need your **Bucket** and **Access Key** for the next stage when you start writing code. You can either copy-and-paste them into a text file now or come back to this settings screen later.  You should see that the **Access Key** that you were issued matches the one shown on this screen.
+- You'll need your **Bucket Key** and **Access Key** for the next stage when you start writing code. You can either copy-and-paste them into a text file now or come back to this settings screen later.  You should see that the **Access Key** that you were issued with your subscription code matches the one shown on this screen.
 
 ![](images/image9.png)
 

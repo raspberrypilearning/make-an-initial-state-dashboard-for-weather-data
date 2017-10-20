@@ -12,10 +12,12 @@ Our friends at Initial State have provided a dedicated white label platform just
 
 You will write Python code to upload Weather Station data to Initial State and build simple dashboards to display, analyse and share it.
 
+![](images/image1.png)
+
 ### What you will learn
 
 
 This project covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](http://rpf.io/curriculum){:target="_blank"}:
 
-+ [Apply programming constructs to solve a problem](https://curriculum.raspberrypi.org/programming/developer/){:target="_blank"}
-+ [Combine inputs and/or outputs to create projects or solve a problem](https://www.raspberrypi.org/curriculum/physical-computing/ddeveloper){:target="_blank"}
++ [Apply abstraction and decomposition to solve more complex problem](https://curriculum.raspberrypi.org/programming/developer/){:target="_blank"}
++ [Process input data to monitor or react to the environment](https://www.raspberrypi.org/curriculum/physical-computing/developer){:target="_blank"}

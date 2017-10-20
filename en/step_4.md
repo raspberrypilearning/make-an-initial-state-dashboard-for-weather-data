@@ -4,6 +4,8 @@ You are going to use the `ISStreamer` Python library to stream data to your Init
 
 - Open a new Python file with Idle (or your favourite Python IDE) and save it into /home/pi as `IS-upload.py`.
 
+ [[[rpi-gui-idle-opening]]]
+
 -  First of all, import the parts of the ISStreamer library that you need. Add this line at the top.
 
 ```python
@@ -28,13 +30,13 @@ rainfall = 1.270
 ```python
 
 BUCKET_NAME = ":partly_sunny:  My Weather Station"
-BUCKET_KEY = credentials['XXXX'] # Replace XXXX with your bucket key
-ACCESS_KEY = credentials['YYYY'] # Replace YYYY with your access key
+BUCKET_KEY = 'XXXX' # Replace XXXX with your bucket key
+ACCESS_KEY = 'YYYY' # Replace YYYY with your access key
 SENSOR_LOCATION_NAME = "My School"
 ```
 
 
-- Now we add the lines of code to stream the data up into our bucket.
+Now add the lines of code to stream the data up into our bucket.
 
 - First, create a Streamer instance with the credentials needed for your data bucket.
 
@@ -50,13 +52,19 @@ streamer.log(":sweat_drops: " + SENSOR_LOCATION_NAME + " Humidity(%)", humidity)
 
 - Note that the code above uses the `sweat_drops` emoji, but you can change this to another image, or omit it altogether.
 
-- Finally add a line flush the buffer and send the data.
+- Add a line to flush the buffer and send the data.
 
 ```python
 streamer.flush()
 ```
 
-- Save your file, run your code and then take a look at your Initial State account. You should see that a new dashboard element has appear and a single data point has been plotted.
+- Finally, add a line to indicate that the program has finished.
+
+```python
+print("Upload code finished")
+```
+
+- Save your file, run your code and then take a look at your Initial State account. Select the Tiles view and you should see that a new dashboard element has appear and a single data point has been plotted.
 
 ![](images/image10.png)
 
@@ -104,11 +112,11 @@ streamer.log(":droplet: " + SENSOR_LOCATION_NAME + " Pressure(mb)", pressure)
 ---/hint---
 ---/hints---
 
-- Run you code again. You should now see that two more tiles are created on the dashboard. Note that their 'timeline' begins back when the first humidity data points were uploaded to the bucket.
+- Run your code again. You should now see that two more tiles are created on the dashboard. Note that their 'timeline' begins back when the first humidity data points were uploaded to the bucket.
 
 ![](images/image14.png)
 
-- Now add the extra lines needed for the rest of the Weather Station sensors.
+- Now add the extra lines needed for the rest of the Weather Station sensors. Make sure these are before the `streamer.flush()` line.
 
 ---hints---
 ---hint---
