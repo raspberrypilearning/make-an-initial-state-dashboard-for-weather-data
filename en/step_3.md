@@ -14,9 +14,7 @@ Once you're logged in, create a new **bucket** to store your data:
 
 ![](images/image5.png)
 
-- Then click on the **Create stream bucket** button.
-
-![](images/image29.png)
+- Then click on the **Create stream bucket** button. ![](images/image29.png)
 
 ![](images/image6.png)
 

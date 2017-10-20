@@ -12,7 +12,7 @@ There are loads of ways to configure your dashboard on Initial State. What inter
 
 Initial State makes it easy to share your dashboard on embed it onto a website.
 
-<iframe src="https://rpi.hosted-app.com/embed/?org=rpi#/tiles/22wsoKeXTyk6SEupsOB37GSeiwJyHvVj" width="600"></iframe>
+<iframe src="https://rpi.hosted-app.com/embed/?org=rpi#/tiles/22wsoKeXTyk6SEupsOB37GSeiwJyHvVj" width="800" height="600"></iframe>
 
 - Click on the **settings** link for your dashboard in the left hand pane and then select the **Sharing** tab.
 

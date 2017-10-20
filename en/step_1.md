@@ -1,12 +1,14 @@
 ## Introduction
 
-Once you're collecting data with your Oracle Weather Station, it's much easier to see how the climate is changing and identify patterns  through graphs and visualisations.
+The Oracle Raspberry Pi Weather Station is a kit which allows you to collect weather data using a variety of sensors. It is designed to be used in schools to enable students to create their own weather station, and has a range of resources to support its use.
+
+As well as logging data locally, schools that received a free Weather Station as part of the 2016 scheme can log their data in a central Oracle database, so they can share information and collaborate with schools around the world
+
+Once you're collecting data with your Oracle Weather Station, an easy way see how the climate is changing and identify patterns is through graphs and visualisations.
 
  [Initial State](https://www.initialstate.com/){:target="_blank"} is an online streaming and visualisation platform to which you can  upload time series data from your sensors, devices, software, files, or anything that can make an HTTPS request. Streaming data to your Initial State account allows you to see what is happening in real-time through colourful and customisable dashboards.
 
 Our friends at Initial State have provided a dedicated white label platform just for Oracle Weather Station users.
-
-![](images/image1.png)
 
 ### What you will make
 
