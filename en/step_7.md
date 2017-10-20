@@ -12,9 +12,9 @@ There are loads of ways to configure your dashboard on Initial State. What inter
 
 Initial State makes it easy to share your dashboard on embed it onto a website.
 
-<iframe src="https://rpi.hosted-app.com/embed/?org=rpi#/tiles/22wsoKeXTyk6SEupsOB37GSeiwJyHvVj",height="200"></iframe>
+<iframe src="https://rpi.hosted-app.com/embed/?org=rpi#/tiles/22wsoKeXTyk6SEupsOB37GSeiwJyHvVj" height="200"></iframe>
 
-- Click on the **settings** link for your dashboard in the right hand pane and then select the **Sharing** tab.
+- Click on the **settings** link for your dashboard in the left hand pane and then select the **Sharing** tab.
 
 ![](images/image28.png)
 
@@ -25,6 +25,6 @@ Initial State makes it easy to share your dashboard on embed it onto a website.
 ### Other Weather Station projects
 
 - How about trying some of our other Weather Station resources on [raspberrypi.org](https://raspberrypi.org) to learn how to access the Oracle Weather Station database and play with data from around the world?
-  - [Fetching the weather](https://projects.raspberrypi.org/en/projects/fetching-the-weather)
-  - [Graphing the weather](https://projects.raspberrypi.org/en/projects/graphing-the-weather)
-  - [Mapping the weather](https://projects.raspberrypi.org/en/projects/mapping-the-weather)
+  - [Fetching the weather](https://projects.raspberrypi.org/en/projects/fetching-the-weather){:target="_blank"}
+  - [Graphing the weather](https://projects.raspberrypi.org/en/projects/graphing-the-weather){:target="_blank"}
+  - [Mapping the weather](https://projects.raspberrypi.org/en/projects/mapping-the-weather){:target="_blank"}
