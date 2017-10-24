@@ -8,7 +8,9 @@ If you can't find these details, please email weather@raspberrypi.org with your 
 
 ![](images/image4.png)
 
-Once you're logged in, create a new **bucket** to store your data:
+### Add a Bucket to store your data
+
+On Initial State, every set of data needs a **Bucket** in which it is stored. Once you're logged in, create a new **bucket** to which you will stream your Weather Station data.
 
 - If it is not already open, click on the **show/hide the shelf** button in the top left hand corner of the window. ![](images/image5.png)
 

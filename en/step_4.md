@@ -44,6 +44,7 @@ Now add the lines of code to stream the data up into our bucket.
 ```python
 streamer = Streamer(bucket_name=BUCKET_NAME, bucket_key=BUCKET_KEY, access_key=ACCESS_KEY)
 ```
+### A single data source
 
 - Start with a single measurement to test the process. For example, your humidity readings.
 
@@ -51,7 +52,7 @@ streamer = Streamer(bucket_name=BUCKET_NAME, bucket_key=BUCKET_KEY, access_key=A
 streamer.log(":sweat_drops: " + SENSOR_LOCATION_NAME + " Humidity(%)", humidity)
 ```
 
-- Note that the code above uses the `sweat_drops` emoji, but you can change this to another image, or omit it altogether.
+- Note that the code above uses the `sweat_drops` emoji for decoration, but you can change this to another image, or omit it altogether.
 
 - Add a line to flush the buffer and send the data.
 
@@ -89,6 +90,7 @@ humidity = 57.078
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tolt4mDNE4A" frameborder="0" allowfullscreen></iframe>
 
+### Multiple data sources
 
 - Now add two more `streamer.log` lines to your Python code for your temperature and pressure readings.
 
@@ -116,6 +118,8 @@ streamer.log(":droplet: " + SENSOR_LOCATION_NAME + " Pressure(mb)", pressure)
 
 ![](images/image14.png)
 
+### All Weather Station data sources
+
 - Now add the extra lines needed for the rest of the Weather Station sensors. Make sure these are before the `streamer.flush()` line.
 
 ---hints---
@@ -135,6 +139,8 @@ streamer.log(":cloud: " + SENSOR_LOCATION_NAME + " Air Quality", air_quality)
 ---/hints---
 
 ![](images/image1.png)
+
+### Managing credentials
 
 - When you installed the Weather Station software, you will have noticed that there are already a couple of sets of credentials used by Oracle Weather Station scripts, for the local MariaDB and the online Oracle databases. Rather than store these directly in the Python code itself, these are stored as supplementary JSON files. This is good practice so now that testing is complete, do the same for the Initial State keys.   
 

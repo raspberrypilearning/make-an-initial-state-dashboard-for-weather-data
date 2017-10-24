@@ -1,6 +1,7 @@
 ## Using live data
 
 For testing and development, you used some fictitious data values that you stored as variables in your code. Once you've tested your upload, you should delete these and amend the code to process real data from your weather station.
+
 These values typically are produced are floating point numbers with several decimal places, even though the Weather Station station sensors are not really capable of this level of precision. Therefore it makes sense to round the values to 2 or 3 decimal places.
 
 [[[generic-python-rounding-numbers]]]
@@ -16,7 +17,7 @@ These values typically are produced are floating point numbers with several deci
 
 --- hints ---
 --- hint ---
-Then use `.format` to perform the rounding.
+Use `.format` to perform the rounding.
 ```python
 rounded_number = "{0:.3f}".format(number_with_dec_places)
 ```
@@ -33,6 +34,8 @@ rainfall = "{0:.3f}".format(rainfall)
 ```
 ---/hint---
 ---/hints---
+
+### Wind direction
 
 As you're going to be building some dashboards, it will be easier to see a text-based representation of the wind direction. At the moment you send a numerical value for the angle detected by our wind vane. So in the next step you're going onvert that into [cardinal (N, S, E or W) or intercardinal directions (ESE, NW etc)](http://snowfence.umn.edu/Components/winddirectionanddegreeswithouttable3.htm){:target="_blank"}.
 
@@ -74,6 +77,8 @@ streamer.log(":cloud_tornado: " + SENSOR_LOCATION_NAME + " Wind Direction Text",
 - Run your code and check your Initial State dashboard. You should see that a new tile with the converted wind direction has appeared.
 
 ![](images/image30.png)
+
+### Integration with Weather Station software
 
 Once your code is working, you need to integrate it with the Oracle Weather Station software. This can be found it the ``/home/pi/weather-station` directory.
 
