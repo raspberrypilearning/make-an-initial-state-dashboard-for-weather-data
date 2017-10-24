@@ -2,18 +2,22 @@
 
 You are going to use the `ISStreamer` Python library to stream data to your Initial State bucket.
 
-- Open a new Python file with Idle (or your favourite Python IDE) and save it into /home/pi as `IS-upload.py`.
+- Open a new Python file with IDLE (or your favourite Python IDE), and save it to `/home/pi` as `IS-upload.py`.
 
  [[[rpi-gui-idle-opening]]]
 
--  First of all, import the parts of the `ISStreamer` library that you need. Add this line at the top. You'll also use the `os` library later so import that too.
+First of all, import the parts of the `ISStreamer` library that you need, as well as the `os` library.
+
+- Add the following lines at the top of your file:
 
 ```python
 from ISStreamer.Streamer import Streamer
 import os
 ```
 
-- Now you need to develop the code to process each one of your weather readings. Rather than use actual measurements from your sensors during this development stage, create some test data as Python variables. Add these lines underneath your library imports.
+Now you need to develop the code to process each one of your weather readings. For this development stage, rather than using actual sensor measurements, you will create some test data as Python variables.
+
+- Add these lines underneath your library import statements:
 
 ```python
 humidity = 54.333
@@ -26,7 +30,7 @@ wind_average = 180
 rainfall = 1.270
 ```
 
-- Then add some more variables to store the Initial State streaming configuration information. The `BUCKET_NAME` should match the one you used when creating a new bucket earlier. Replace `XXXX` and `YYYY` with your Initial State keys and use your own school name for the `SENSOR_LOCATION_NAME`.
+- Then add some more variables to store the Initial State streaming configuration information. The `BUCKET_NAME` should match the one you used when creating a new Bucket earlier. Replace `XXXX` and `YYYY` with your Initial State keys,  and use your own school name for the `SENSOR_LOCATION_NAME`.
 
 ```python
 
@@ -36,8 +40,7 @@ ACCESS_KEY = 'YYYY' # Replace YYYY with your access key
 SENSOR_LOCATION_NAME = "My School"
 ```
 
-
-Now add the lines of code to stream the data up into our bucket.
+Now add the lines of code to stream the data to your Bucket.
 
 - First, create a Streamer instance with the credentials needed for your data bucket.
 
@@ -47,13 +50,13 @@ streamer = Streamer(bucket_name=BUCKET_NAME, bucket_key=BUCKET_KEY, access_key=A
 
 ### A single data source
 
-- Start with a single measurement to test the process. For example, your humidity readings.
+- Start with a single measurement to test the process, for example, your humidity reading:
 
 ```python
 streamer.log(":sweat_drops: " + SENSOR_LOCATION_NAME + " Humidity(%)", humidity)
 ```
 
-- Note that the code above uses the `sweat_drops` emoji for decoration, but you can change this to another image, or omit it altogether.
+Note that the code above uses the `sweat_drops` emoji for decoration, but you can change this to another image, or omit it altogether.
 
 - Add a line to flush the buffer and send the data.
 
@@ -67,7 +70,7 @@ streamer.flush()
 print("Upload code finished")
 ```
 
-- Save your file, run your code and then take a look at your Initial State account. Select the Tiles view and you should see that a new dashboard element has appeared and a single data point has been plotted.
+- Save your file, run your code, and then take a look at your Initial State account. Select the Tiles view, and you should see that a new dashboard element on which a single data point has been plotted.
 
 ![](images/image10.png)
 
@@ -77,17 +80,17 @@ print("Upload code finished")
 humidity = 57.078
 ```
 
-- Repeat this a few more times, changing the humidity value varying the time between each iteration.
+- Repeat this a few more times, changing the humidity value before each round.
 
 ![](images/image11.png)
 
-- You can experiment with different view options by clicking on the **Edit Tile** button in the top right and then clicking on the graph tile. ![](images/image23.png)
+- Experiment with different view options by clicking on the **Edit Tile** button in the top right-hand corder and then clicking on the Graph tile. ![](images/image23.png)
 
-- Choose some of the other Tile Type options and look at the different ways of displaying your data.
+- Choose some of the other Tile Type options, and look at the different ways of displaying your data.
 
 ![](images/image12.png)
 
-- The **Gauge** Tile type gives a simple display of the latest reading along with the maximum and minimum values received. If you're changing a **wide Line Graph** tile to a **Gauge** view then you'll need to shrink its width by clicking the white circles at either end of the tile and dragging inwards.
+The **Gauge** tile type gives a simple display of the latest reading along with the maximum and minimum values received. If you're changing a **Wide Line Graph** tile to a **Gauge** view, then you'll need to shrink its width by clicking the white circles at either end of the tile and dragging inwards.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tolt4mDNE4A" frameborder="0" allowfullscreen></iframe>
 
@@ -115,17 +118,17 @@ streamer.log(":droplet: " + SENSOR_LOCATION_NAME + " Pressure(mb)", pressure)
 ---/hint---
 ---/hints---
 
-- Run your code again. You should now see that two more tiles are created on the dashboard. Note that their 'timeline' begins back when the first humidity data points were uploaded to the bucket.
+- Run your code again. You should now see two more tiles on the dashboard. Note that their 'timeline' begins back when the first humidity data points were uploaded to the Bucket.
 
 ![](images/image14.png)
 
 ### All Weather Station data sources
 
-- Now add the extra lines needed for the rest of the Weather Station sensors. Make sure these are before the `streamer.flush()` line.
+- Now add the extra lines needed for the rest of the Weather Station sensors. Make sure these are above the `streamer.flush()` line.
 
 ---hints---
 ---hint---
-You need a line for wind direction, speed and gust measurements, rainfall, ground temperature and air quality.
+You need a line each for wind direction, wind speed, wind gust, rainfall, ground temperature, and air quality.
 ---/hint---
 ---hint---
 ```python
@@ -143,11 +146,13 @@ streamer.log(":cloud: " + SENSOR_LOCATION_NAME + " Air Quality", air_quality)
 
 ### Managing credentials
 
-- When you installed the Weather Station software, you will have noticed that there are already a couple of sets of credentials used by Oracle Weather Station scripts, for the local MariaDB and the online Oracle databases. Rather than store these directly in the Python code itself, these are stored as supplementary JSON files. This is good practice so now that testing is complete, do the same for the Initial State keys.   
+When you installed the Weather Station software, you might have noticed that there are already a couple of sets of credentials used by Oracle Weather Station scripts: one for the local MariaDB, and one for the online Oracle databases. Rather than being stored directly in the Python code, these credentials are stored as supplementary JSON files. This is good practice, so now that testing is complete, do the same for your Initial State keys.
+
+- Store your Initial State credentials in a JSON file, and change your Python script so that it loads this file to get the credentials.
 
 ---hints---
 ---hint---
-Create a file called `credentials.initialstate` and populate it with the bucket and access keys:
+Create a JSON file called `credentials.initialstate`, and populate it with the Bucket Key and Access Key:
 
 ```json
 {
@@ -174,4 +179,4 @@ ACCESS_KEY = credentials_is['ACCESS_KEY']
 ---/hint---
 ---/hints---
 
-- Test that your code still uploads successfully.
+- Test that your code still uploads data successfully.
