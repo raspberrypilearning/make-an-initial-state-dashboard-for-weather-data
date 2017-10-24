@@ -1,6 +1,38 @@
 ## Using live data
 
 For testing and development, you used some fictitious data values that you stored as variables in your code. Once you've tested your upload, you should delete these and amend the code to process real data from your weather station.
+These values typically are produced are floating point numbers with several decimal places, even though the Weather Station station sensors are not really capable of this level of precision. Therefore it makes sense to round the values to 2 or 3 decimal places.
+
+[[[generic-python-rounding-numbers]]]
+
+- So to round your humidity measurement to 3 decimal places, do this:
+
+    ```python
+    humidity = "{0:.3f}".format(humidity)
+    ```
+
+- Repeat this for each of the Weather Station measurements.
+
+
+--- hints ---
+--- hint ---
+Then use `.format` to perform the rounding.
+```python
+rounded_number = "{0:.3f}".format(number_with_dec_places)
+```
+--- /hint---
+--- hint ---
+- Your code should look like this:
+```python
+ambient_temp = "{0:.3f}".format(ambient_temp)
+ground_temp = "{0:.3f}".format(ground_temp)
+pressure = "{0:.3f}".format(pressure)
+wind_speed_mph = "{0:.3f}".format(wind_speed)
+wind_gust_mph = "{0:.3f}".format(wind_gust)
+rainfall = "{0:.3f}".format(rainfall)
+```
+---/hint---
+---/hints---
 
 As you're going to be building some dashboards, it will be easier to see a text-based representation of the wind direction. At the moment you send a numerical value for the angle detected by our wind vane. So in the next step you're going onvert that into [cardinal (N, S, E or W) or intercardinal directions (ESE, NW etc)](http://snowfence.umn.edu/Components/winddirectionanddegreeswithouttable3.htm){:target="_blank"}.
 

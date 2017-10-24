@@ -65,7 +65,7 @@ streamer.flush()
 print("Upload code finished")
 ```
 
-- Save your file, run your code and then take a look at your Initial State account. Select the Tiles view and you should see that a new dashboard element has appear and a single data point has been plotted.
+- Save your file, run your code and then take a look at your Initial State account. Select the Tiles view and you should see that a new dashboard element has appeared and a single data point has been plotted.
 
 ![](images/image10.png)
 
@@ -85,13 +85,10 @@ humidity = 57.078
 
 ![](images/image12.png)
 
-- The **Gauge** Tile type gives a simple display of the latest reading along with the maximum and minimum values received.
+- The **Gauge** Tile type gives a simple display of the latest reading along with the maximum and minimum values received. If you're changing a **wide Line Graph** tile to a **Gauge** view then you'll need to shrink its width by clicking the white circles at either end of the tile and dragging inwards.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vH9iibNk9ZM" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tolt4mDNE4A" frameborder="0" allowfullscreen></iframe>
 
-If you're changing a wide line view tile to a gauge view then you'll need to shrink the width by clicking the white circles at either end of the tile and dragging inwards.
-
-![](images/image13.png)
 
 - Now add two more `streamer.log` lines to your Python code for your temperature and pressure readings.
 

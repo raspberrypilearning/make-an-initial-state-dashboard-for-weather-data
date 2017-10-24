@@ -3,13 +3,13 @@ hero_image: images/banner.png
 description: make-an-initial-state-dashboard-for-weather-data
 original_url:
 theme: red # possible values: blue, green, navy, orange, red, turquoise, violet, yellow
-duration: 1 # possible values: 1, 2 or 3
+duration: 2 # possible values: 1, 2 or 3
 listed: false
 ingredient: false
 copyedit: false
-curriculum: creator
+curriculum: developer
 interests: "nature/outside/weather"
-technologies: "web, sense-hat, physical computing, python"
+technologies: "html-css, physical computing, python"
 site_areas:
 steps:
   - title: Introduction
