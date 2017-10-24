@@ -44,6 +44,7 @@ Now add the lines of code to stream the data up into our bucket.
 ```python
 streamer = Streamer(bucket_name=BUCKET_NAME, bucket_key=BUCKET_KEY, access_key=ACCESS_KEY)
 ```
+
 ### A single data source
 
 - Start with a single measurement to test the process. For example, your humidity readings.
