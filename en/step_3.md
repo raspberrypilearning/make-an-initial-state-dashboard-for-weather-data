@@ -1,9 +1,5 @@
 ## Registering with Initial State
 
-As a user of one of our Oracle Weather Station kits you will have been pre-issued with a **subscription code** and a **streaming key**. These can be used to access and upload data to the dedicated White Label area hosted by Initial State, just for Oracle Weather Station schools.
-
-If you can't find these details, please email weather@raspberrypi.org with your school name and address, and the email address of the person who applied for the Weather Station kit.
-
 - To complete your registration, follow [this link](https://rpi.hosted-app.com/#/register/){:target="_blank"} and fill in your email address, choose a password and  then type your **subscription code** into the bottom box. If possible, please use the same email address that you used to register with the Oracle online database.
 
 ![](images/image4.png)
