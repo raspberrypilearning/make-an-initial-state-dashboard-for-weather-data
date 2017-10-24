@@ -6,7 +6,7 @@ As well as logging data locally, schools that received a free Weather Station as
 
 Once you're collecting data with your Weather Station, an easy way to see how the climate is changing and to identify patterns is through graphs and visualisations.
 
-[Initial State](https://www.initialstate.com/){:target="_blank"} is an online streaming and visualisation platform to which you can  upload time series data from sensors, devices, software, files, or anything capable of making an HTTPS request. Streaming data to your Initial State account allows you to use colourful, customisable dashboards to see what you are recording happening in real time.
+[Initial State](https://www.initialstate.com/){:target="_blank"} is an online platform to which you can stream time series data (from sensors, devices, software, files, and anything capable of making an HTTPS request) in order to visualise it. Streaming data to your Initial State account allows you to use colourful, customisable dashboards to see what you are recording happening in real time.
 
 Our friends at Initial State have kindly provided a dedicated white-label platform just for Oracle Weather Station users.
 
