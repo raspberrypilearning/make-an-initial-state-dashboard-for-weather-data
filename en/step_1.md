@@ -1,14 +1,14 @@
 ## Introduction
 
-The Oracle Raspberry Pi Weather Station is a kit which allows you to collect weather data using a variety of sensors. It is designed to be used in schools to enable students to create their own weather station, and has a range of resources to support its use.
+The Raspberry Pi Oracle Weather Station allows you to collect weather data using a variety of sensors. It was designed for use in schools to enable students to create their own weather station, and there is a range of resources to support its use.
 
-As well as logging data locally, schools that received a free Weather Station as part of the 2016 scheme can log their data in a central Oracle database, so they can share information and collaborate with schools around the world
+As well as logging data locally, schools that received a free Weather Station as part of the 2016 scheme can log their data in a central Oracle database, so they can share information and collaborate with other schools around the world.
 
-Once you're collecting data with your Oracle Weather Station, an easy way see how the climate is changing and identify patterns is through graphs and visualisations.
+Once you're collecting data with your Weather Station, an easy way to see how the climate is changing and to identify patterns is through graphs and visualisations.
 
- [Initial State](https://www.initialstate.com/){:target="_blank"} is an online streaming and visualisation platform to which you can  upload time series data from your sensors, devices, software, files, or anything that can make an HTTPS request. Streaming data to your Initial State account allows you to see what is happening in real-time through colourful and customisable dashboards.
+[Initial State](https://www.initialstate.com/){:target="_blank"} is an online streaming and visualisation platform to which you can  upload time series data from sensors, devices, software, files, or anything capable of making an HTTPS request. Streaming data to your Initial State account allows you to use colourful, customisable dashboards to see what you are recording happening in real time.
 
-Our friends at Initial State have provided a dedicated white label platform just for Oracle Weather Station users.
+Our friends at Initial State have kindly provided a dedicated white-label platform just for Oracle Weather Station users.
 
 ### What you will make
 
