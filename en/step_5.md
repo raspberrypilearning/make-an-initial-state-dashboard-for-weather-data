@@ -30,7 +30,7 @@ title: Code Explanation
 
 - Then truncate the value using integer division.
 
-- Line 4: This gives the index into the list from which we select the cardinal value (modulo 16).
+- Line 4: This gives the index into the list from which we select the cardinal value. By using modulo 16 division you can make sure that the maximum possible value is 15 - the largest index value in our `directions` list).
 ---/collapse---
 
 - Now you can use this function to convert the wind_direction (in degrees) from your Weather Station into cardinal value. Add these two lines to your code.

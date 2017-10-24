@@ -87,6 +87,10 @@ humidity = 57.078
 
 - The **Gauge** Tile type gives a simple display of the latest reading along with the maximum and minimum values received.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vH9iibNk9ZM" frameborder="0" allowfullscreen></iframe>
+
+If you're changing a wide line view tile to a gauge view then you'll need to shrink the width by clicking the white circles at either end of the tile and dragging inwards.
+
 ![](images/image13.png)
 
 - Now add two more `streamer.log` lines to your Python code for your temperature and pressure readings.
