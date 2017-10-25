@@ -1,18 +1,18 @@
 ## Using live data
 
-For testing and development, you used some fictitious data values that you stored as variables in your code. Once you've tested your upload, you should delete these and amend the code to process real data from your weather station.
+For testing and development of your code, you used made-up data values which you stored as variables in your code. Once you've tested your upload, you should delete these and amend the code to process real data from your Weather Station.
 
-These values typically are produced are floating point numbers with several decimal places, even though the Weather Station station sensors are not really capable of this level of precision. Therefore it makes sense to round the values to 2 or 3 decimal places.
+You real data values typically are produced are floating-point numbers with several decimal places, even though the Weather Station sensors are not really capable of this level of precision. Therefore, it makes sense to round the values to two or three decimal places.
 
 [[[generic-python-rounding-numbers]]]
 
-- So to round your humidity measurement to 3 decimal places, do this:
+- To round your humidity measurement to three decimal places, do this:
 
     ```python
     humidity = "{0:.3f}".format(humidity)
     ```
 
-- Repeat this for each of the Weather Station measurements.
+- Write similar commands to round the other Weather Station measurements.
 
 
 --- hints ---
@@ -37,10 +37,9 @@ rainfall = "{0:.3f}".format(rainfall)
 
 ### Wind direction
 
-As you're going to be building some dashboards, it will be easier to see a text-based representation of the wind direction. At the moment you send a numerical value for the angle detected by our wind vane. So in the next step you're going onvert that into [cardinal (N, S, E or W) or intercardinal directions (ESE, NW etc)](http://snowfence.umn.edu/Components/winddirectionanddegreeswithouttable3.htm){:target="_blank"}.
+As you're going to be building some dashboards, it will be easier to see a text-based representation of the wind direction. At the moment, you are sending a numerical value for the angle your wind vane detects. In the next step, you're going convert that angle into [cardinal (N, S, E, W) or intercardinal directions (ESE, NW, etc.)](http://snowfence.umn.edu/Components/winddirectionanddegreeswithouttable3.htm){:target="_blank"}.
 
-- You could just use a 'look-up table' made out of a series of `if... elif... else` conditionals, but it is neater to simply write a function to perform a numerical calculation.
-
+- You could just use a look-up table made out of a series of `if/elif/else` conditionals, but it is neater to write a function to perform a numerical calculation.
 
 ```python
 def degrees_to_cardinal(angle):
@@ -53,26 +52,24 @@ def degrees_to_cardinal(angle):
 
 ---collapse---
 ---
-title: Code Explanation
+title: Code explanation
 ---
-- Line 1: Define a function named degrees_to_cardinal, that takes an angle as an input value.
+- Line 1: define a function named `degrees_to_cardinal` that takes an angle as an input value.
 
-- Line 2: There are 16 possible values as shown in the `directions` list in the code snippet above.
+- Line 2: there are 16 possible output values in the `directions` list.
 
-- Line 3: So the first step in the conversion is to divide the angle by 22.5 (because 360 degrees / 16 directions = 22.5 degrees).
+- Line 3: the first step in the conversion is to divide the angle by `22.5`, because `360 degrees / 16 directions = 22.5 degrees`. However, to avoid values falling on the threshold between adjacent directions (e.g. think about what happens at 0 and 360 degrees), you need to add half a step value/direction change (`22.5 / 2 = 11.25`). Then truncate the value using integer division.
 
-- However, to avoid values falling on the change threshold between adjacent directions (think about what happens at 0 and 360 degrees), you need to add half a step value/direction change (22.5 / 2 = 11.25).
+- Line 4: this uses the `ix` value calculated in line 3 as a list index to select right the cardinal direction value and return it. By using modulo 16 division, you make sure that the maximum possible value of `ix` used as a list index is 15 - the largest index value in the `directions` list.
 
-- Then truncate the value using integer division.
-
-- Line 4: This gives the index into the list from which we select the cardinal value. By using modulo 16 division you can make sure that the maximum possible value is 15 - the largest index value in our `directions` list).
+[[[generic-python-mod-operator]]]
 ---/collapse---
 
-- Now you can use this function to convert the wind_direction (in degrees) from your Weather Station into cardinal value. Add these two lines to your code.
+- Now you can use this function to convert the `wind_direction` (in degrees) from your Weather Station into a cardinal direction. Add these two lines to your code.
 
 ```python
-wind_direction_text = degrees_to_cardinal(int(wind_average))
-streamer.log(":cloud_tornado: " + SENSOR_LOCATION_NAME + " Wind Direction Text", wind_direction_text)
+wind_direction_text = degrees_to_cardinal(int(wind_direction))
+streamer.log(":cloud_tornado: " + SENSOR_LOCATION_NAME + " Wind direction text", wind_direction_text)
 ```
 - Run your code and check your Initial State dashboard. You should see that a new tile with the converted wind direction has appeared.
 
@@ -80,19 +77,20 @@ streamer.log(":cloud_tornado: " + SENSOR_LOCATION_NAME + " Wind Direction Text",
 
 ### Integration with Weather Station software
 
-Once your code is working, you need to integrate it with the Oracle Weather Station software. This can be found it the ``/home/pi/weather-station` directory.
+Once your code is working, you need to integrate it with the Oracle Weather Station software, which can be found in the `/home/pi/weather-station` directory.
 
-- The Oracle Weather Station software uses the Crontab method to run a Python script called [log_all_sensors.py](https://github.com/raspberrypi/weather-station/blob/master/log_all_sensors.py) every 5 minutes. A simple way to modify your Weather Station so that it regularly uploads data to Initial State is to add the upload code you have written to this file.
+- The Oracle Weather Station software uses the crontab method to run a Python script called [`log_all_sensors.py`](https://github.com/raspberrypi/weather-station/blob/master/log_all_sensors.py) every five minutes. A simple way to modify your Weather Station so that it regularly uploads data to Initial State is to add the upload code you have written to this file.
 
 ---hints---
 ---hint---
-Make sure you add the library imports to the top of your modified file.
+Make sure you add the library imports to the top of `log_all_sensors.py` when you modify this file.
 ---/hint---
 ---hint---
-The rest of your code can be inserted after lines in the original `log_all_sensors.py` that handle inserting readings into the local MariaDB database.  
+The rest of your code can be inserted after lines in `log_all_sensors.py` which handle inserting readings into the local MariaDB database.  
 ---/hint---
 ---hint---
-A modified log_all_sensors.py could look like this:
+A modified `log_all_sensors.py` could look like this:
+
 ```python
 #!/usr/bin/python3
 import time
