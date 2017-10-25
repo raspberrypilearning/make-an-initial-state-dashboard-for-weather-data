@@ -62,7 +62,6 @@ title: Code explanation
 
 - Line 4: this uses the `ix` value calculated in line 3 as a list index to select right the cardinal direction value and return it. By using modulo 16 division, you make sure that the maximum possible value of `ix` used as a list index is 15 - the largest index value in the `directions` list.
 
-[[[generic-python-mod-operator]]]
 ---/collapse---
 
 - Now you can use this function to convert the `wind_direction` (in degrees) from your Weather Station into a cardinal direction. Add these two lines to your code.
