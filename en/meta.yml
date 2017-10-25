@@ -1,0 +1,21 @@
+title: Make an Initial State dashboard for weather data
+hero_image: images/banner.png
+description: Make an online dashboard for your Oracle Weather Station data using Initial State
+original_url:
+theme: red # possible values: blue, green, navy, orange, red, turquoise, violet, yellow
+duration: 2 # possible values: 1, 2 or 3
+listed: false
+ingredient: false
+copyedit: true
+curriculum: developer
+interests: "nature/outside/weather"
+technologies: "html-css, physical computing, python"
+site_areas:
+steps:
+  - title: Introduction
+  - title: What you will need
+  - title: Registering with Initial State
+  - title: Uploading data to Initial State
+  - title: Using live data
+  - title: Visualising your data
+  - title: 'Challenge: build and share amazing Weather data dashboards'
