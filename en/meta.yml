@@ -4,7 +4,7 @@ description: Make an online dashboard for your Oracle Weather Station data using
 original_url:
 theme: red # possible values: blue, green, navy, orange, red, turquoise, violet, yellow
 duration: 2 # possible values: 1, 2 or 3
-listed: false
+listed: true
 ingredient: false
 copyedit: true
 curriculum: developer
