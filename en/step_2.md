@@ -14,11 +14,16 @@ The steps in this guide assume that you will be regularly uploading data to Init
 
  - The Python `ISStreamer` library — install it by logging in to your Weather Station Pi, opening a terminal window, and typing:
 
-     ```bash
-     sudo pip3 install ISStreamer
+```bash
+sudo pip3 install ISStreamer
 
-     ```
+```
+- If you're running an older (pre - Sept 2017) version of the Weather Station software, you'll also need the Python2.7 version of the `ISStreamer` library:
 
+```bash
+sudo pip install ISStreamer
+
+```
 ### Additional resources
 
 As a user of one of our Oracle Weather Station kits, you will have been issued with a **subscription code** and a **streaming key**. You can use these to access and upload data to the dedicated white-label area hosted by Initial State.

@@ -88,7 +88,7 @@ Make sure you add the library imports to the top of `log_all_sensors.py` when yo
 The rest of your code can be inserted after lines in `log_all_sensors.py` which handle inserting readings into the local MariaDB database.  
 ---/hint---
 ---hint---
-A modified `log_all_sensors.py` could look like this:
+A modified  **Python3** `log_all_sensors.py` could look like this:
 
 ```python
 #!/usr/bin/python3
@@ -171,6 +171,7 @@ streamer.log(":cloud_rain: " + SENSOR_LOCATION_NAME + " Rainfall", rainfall)
 streamer.flush()
 print("Upload code finished")
 ```
+Note that this is Python3 code: If you're using an older (pre - Sept 2017) version of the Weather Station software, then your code will be almost identical, except that the first line should be `#!/usr/bin/python`.
 ---/hint---
 ---/hints---
 
