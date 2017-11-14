@@ -171,7 +171,7 @@ streamer.log(":cloud_rain: " + SENSOR_LOCATION_NAME + " Rainfall", rainfall)
 streamer.flush()
 print("Upload code finished")
 ```
-Note that this is Python3 code: If you're using an older (pre - Sept 2017) version of the Weather Station software, then your code will be almost identical, except that the first line should be `#!/usr/bin/python`.
+**Note**: this is Python 3 code. If you're using a version of the Weather Station software from before **September 2017**, you'll be programming in Python 2.7. In this case, your code will be almost identical, except that the first line needs to be `#!/usr/bin/python` instead.
 ---/hint---
 ---/hints---
 
