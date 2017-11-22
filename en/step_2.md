@@ -10,7 +10,7 @@ The steps in this guide assume that you will be regularly uploading data to Init
 
 ### Software
 
-- The [Oracle Weather Station software](https://www.raspberrypi.org/learning/weather-station-guide/software.md){:target="_blank"}.
+- The [Oracle Weather Station software](https://www.raspberrypi.org/learning/weather-station-guide/software.md){:target="_blank"}
 
  - The Python `ISStreamer` library — install it by logging in to your Weather Station Pi, opening a terminal window, and typing:
 
@@ -18,7 +18,7 @@ The steps in this guide assume that you will be regularly uploading data to Init
 sudo pip3 install ISStreamer
 
 ```
-- If you're running an older (pre - Sept 2017) version of the Weather Station software, you'll also need the Python2.7 version of the `ISStreamer` library:
+- If you're running a version of the Weather Station software from **before September 2017**, you'll also need to have installed the Python 2.7 version of the `ISStreamer` library:
 
 ```bash
 sudo pip install ISStreamer
