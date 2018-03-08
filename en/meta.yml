@@ -7,7 +7,7 @@ duration: 2 # possible values: 1, 2 or 3
 listed: true
 ingredient: false
 copyedit: true
-curriculum: developer
+curriculum: developer, design-0, programming-3, phys-comp-0, manufacture-0, community-0
 interests: "nature/outside/weather"
 technologies: "html/css, physical computing, python"
 site_areas:
