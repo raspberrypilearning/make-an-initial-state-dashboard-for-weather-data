@@ -94,6 +94,7 @@ A modified  **Python3** `log_all_sensors.py` could look like this:
 #!/usr/bin/python3
 import time
 import sys
+import json
 import interrupt_client, MCP342X, wind_direction, HTU21D, bmp085, tgs2600, ds18b20_therm
 import database
 import os
